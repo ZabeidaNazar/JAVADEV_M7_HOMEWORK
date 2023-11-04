@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon.ico">
+    <title>Котики</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                width: 95%;
+            }
+        }
+
+        h1, p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .cat-image {
+            width: 100%;
+        }
+
+        form input {
+            margin: 5px 0;
+        }
+
+        .cats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cat {
+            text-align: center;
+            font-size: 18px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            width: 30vw;
+        }
+
+        .note {
+            font-weight: 600;
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">На головну</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Всі ваші котики</h1>
+        <div class="cats"></div>
+        
+        
+        <form id="code" action="" onsubmit="return reload()">
+            <label for="status-code">Статус код</label>
+            <br>
+            <input type="text" name="status-code" id="status-code">
+            <br>
+            <button type="submit">Переглянути</button>
+        </form>
+    </main>
+    <script>
+        let from = document.getElementById("code");
+        let input = document.getElementById("status-code");
+        function reload() {
+            location.href = "/code/" + input.value;
+            return false;
+
+        }
+    </script>
+</body>
+</html>
